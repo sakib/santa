@@ -6,7 +6,7 @@ from pymongo import MongoClient
 app = Flask(__name__)
 uri = os.environ.get('MONGOLAB_URI', 'mongodb://localhost')
 client = MongoClient(uri)
-db = client.sakib
+db = client.heroku_app32469592
 collection = db.santa
 
 @app.route('/', methods=['GET'])
