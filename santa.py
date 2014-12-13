@@ -17,7 +17,7 @@ def add_to_database():
 	email 	= request.form['email']
 	info 	= request.form['info']
 	f 	= open('storage.txt', 'a')
-	uri 	= os.environ.get('MONGOLAB_URI')
+	uri 	= os.environ.get('MONGOLAB_URI', 'mongodb://localhost')
 	client 	= MongoClient(uri)
 	db 	= client.sakib
 	if (db.santa.find({"email": email}).count() == 0):
