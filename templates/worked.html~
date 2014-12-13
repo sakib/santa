@@ -1,0 +1,77 @@
+
+<!doctype html>
+
+<html lang="en">
+	
+	<head>
+    	<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    	<title>Ho ho ho!</title>
+    	<link rel="stylesheet" href="{{url_for('static', filename='foundation/css/foundation.css')}}"/>
+    	<script src="{{url_for('static', filename='foundation/js/vendor/modernizr.js') }}"></script>
+  		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+  	</head>
+
+
+  	<body>     
+      <div id="background">
+   		<img src="{{url_for('static', filename='foundation/img/cat2.gif')}}" class="stretch" alt="" /> 
+   	</div>
+   	
+   	<div class='fade-in is-hidden'>
+	  		<div class="row">
+	  		  	<p> &nbsp; </p>
+	  		  	<p> &nbsp; </p>
+	  		  	<p> &nbsp; </p>
+			 	<p> &nbsp; </p>
+			</div>
+		 
+			<div class="row">	
+				<div class="large-12 columns">
+		  	
+		  			<h1>
+		    			<font face="verdana" color=#ffffff> <strong> <center>
+			  				Congratulations!
+						</center> </strong> </font>
+		   		</h1>
+		    
+	  		  		<p> &nbsp; </p>
+	  		  		<p> &nbsp; </p>
+		  			
+		  			<div class="callout panel">
+			  			<h3>
+			  				<font face="verdana" color=#282D2F> <center>
+			  					You've submitted your info to the USACS Secret Santa.<br>
+			  					Good tidings and cats will come to you.<br>
+			  				</center></font>
+			  			</h3>
+			  			<h5>
+			  				<font face="verdana" color=#282D2F> <center>
+			  					You'll be matched with someone by email.
+			  					</center></font>
+			  			</h5>
+		    		</div>
+		    		
+		    	</div>
+		  	</div>
+		
+			<div class="row">
+	  		  	<p> &nbsp; </p>
+	  		  	<p> <font height=2px> &nbsp; </p>
+			 	<p> <center> 
+			 		<img src="{{url_for('static', filename='foundation/img/russ1.jpg')}}" height="325" width="325">
+			 	</center> </p>
+			</div>
+		
+		</div> <!--fade in div close-->
+
+		<script> 
+			$( "div:hidden" ).fadeIn( 3000 );
+		</script>		
+	   <script src="{{ url_for('static', filename='foundation/js/vendor/jquery.js') }}"></script>
+	   <script src="{{ url_for('static', filename='foundation/js/foundation.min.js') }}"></script>
+	   <script>
+	   	$(document).foundation();
+	   </script>
+	</body>
+</html>
