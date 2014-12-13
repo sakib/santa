@@ -5,3 +5,5 @@ To Do Still:
 Later:
 1. Upload to GitHub
 2. Write script to match objects in database based on info field
+
+1. source secret/bin/activate

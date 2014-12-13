@@ -1,11 +1,13 @@
 from flask import Flask, request, render_template, redirect
+import os
 import pymongo
 from pymongo import MongoClient
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def main_page():	
+def main_page():
+	print os.environ.get('PORT', 5000)
 	return render_template('form.html')
 
 @app.route('/form', methods=['POST'])
@@ -35,4 +37,5 @@ def invalid():
 	return render_template('invalid.html')
 
 if __name__ == '__main__':
-	app.run(debug=True)
+		#app.run(debug=True)
+		app.run(port=os.environ.get('PORT', 5000))
