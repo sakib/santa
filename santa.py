@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def main_page():
-	print os.environ.get('PORT', 5000)
+	print os.environ.get('MONGOLAB_URI')
 	return render_template('form.html')
 
 @app.route('/form', methods=['POST'])
@@ -17,7 +17,8 @@ def add_to_database():
 	email 	= request.form['email']
 	info 	= request.form['info']
 	f 	= open('storage.txt', 'a')
-	client 	= MongoClient()
+	uri 	= os.environ.get('MONGOLAB_URI')
+	client 	= MongoClient(uri)
 	db 	= client.sakib
 	if (db.santa.find({"email": email}).count() == 0):
 		f.write(fname + "|" + lname + "|" + email + "|" + info + "\n")
