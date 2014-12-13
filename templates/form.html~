@@ -9,7 +9,6 @@
     	<title>Ho ho ho!</title>
     	<link rel="stylesheet" href="{{url_for('static', filename='foundation/css/foundation.css')}}"/>
     	<script src="{{url_for('static', filename='foundation/js/vendor/modernizr.js') }}"></script>
-  		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
   	</head>
 
