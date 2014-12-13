@@ -4,10 +4,14 @@ import pymongo
 from pymongo import MongoClient
 
 app = Flask(__name__)
+uri = os.environ.get('MONGOLAB_URI', 'mongodb://localhost')
+client = MongoClient(uri)
+db = client.sakib
+collection = db.santa
 
 @app.route('/', methods=['GET'])
 def main_page():
-	print os.environ.get('MONGOLAB_URI')
+	print db
 	return render_template('form.html')
 
 @app.route('/form', methods=['POST'])
@@ -17,9 +21,6 @@ def add_to_database():
 	email 	= request.form['email']
 	info 	= request.form['info']
 	f 	= open('storage.txt', 'a')
-	uri 	= os.environ.get('MONGOLAB_URI', 'mongodb://localhost')
-	client 	= MongoClient(uri)
-	db 	= client.sakib
 	if (db.santa.find({"email": email}).count() == 0):
 		f.write(fname + "|" + lname + "|" + email + "|" + info + "\n")
 		db.santa.insert({'fname':fname, 'lname':lname, 'email':email, 'info':info})
