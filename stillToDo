@@ -1,9 +1,9 @@
 To Do Still:
 ---------------------------
-2. Upload this stuff to DigitalOcean droplet
+2. Upload this stuff to DigitalOcean droplet NO. 
 
 Later:
-1. Upload to GitHub
+1. Upload to GitHub DONE.
 2. Write script to match objects in database based on info field
 
 1. source secret/bin/activate
