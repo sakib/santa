@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, redirect
-import os
-import pymongo
+import os, pymongo
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -26,7 +25,6 @@ def add_to_database():
 		db.santa.insert({'fname':fname, 'lname':lname, 'email':email, 'info':info})
 	else:
 		return redirect('invalid', 301)	
-	
 	f.close()
 	return redirect('/winner', 301)
 
