@@ -36,5 +36,10 @@ def success():
 def invalid():
 	return render_template('invalid.html')
 
+@app.errorhandler(404)
+def page_not_found():
+    return render_template('404.html')
+##handles all invalid addresses on this doman and routes the browser to an error page. 
+
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
