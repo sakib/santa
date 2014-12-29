@@ -1,0 +1,8 @@
+this is where the text file backup of the entries will be stored. 
+
+in the format of 
+
+name | info | more info | etc
+name | info | more info | etc
+name | info | more info | etc
+name | info | more info | etc

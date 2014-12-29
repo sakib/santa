@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, redirect
-import os
-import pymongo
+import os, pymongo
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -26,7 +25,6 @@ def add_to_database():
 		db.santa.insert({'fname':fname, 'lname':lname, 'email':email, 'info':info})
 	else:
 		return redirect('invalid', 301)	
-	
 	f.close()
 	return redirect('/winner', 301)
 
@@ -37,6 +35,11 @@ def success():
 @app.route('/invalid')
 def invalid():
 	return render_template('invalid.html')
+
+@app.errorhandler(404)
+def page_not_found():
+    return render_template('404.html')
+##handles all invalid addresses on this doman and routes the browser to an error page. 
 
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
