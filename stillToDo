@@ -1,9 +1,8 @@
 To Do Still:
 ---------------------------
-2. Upload this stuff to DigitalOcean droplet
 
-Later:
-1. Upload to GitHub
-2. Write script to match objects in database based on info field
+Write script to match objects in database based on info field
 
 1. source secret/bin/activate
+2. https://www.mongolab.com/databases/heroku_app32469592/collections/santa
+3. https://dashboard.heroku.com/apps/koolaidsanta/resources
