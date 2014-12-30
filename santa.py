@@ -19,13 +19,10 @@ def add_to_database():
 	lname 	= request.form['lastname']
 	email 	= request.form['email']
 	info 	= request.form['info']
-	f 	= open('storage.txt', 'a')
 	if (db.santa.find({"email": email}).count() == 0):
-		f.write(fname + "|" + lname + "|" + email + "|" + info + "\n")
 		db.santa.insert({'fname':fname, 'lname':lname, 'email':email, 'info':info})
 	else:
-		return redirect('invalid', 301)	
-	f.close()
+		return redirect('invalid', 301)
 	return redirect('/winner', 301)
 
 @app.route('/winner')
