@@ -19,6 +19,9 @@ def add_to_database():
 	lname = request.form['lastname']
 	email = request.form['email']
 	info = request.form['info']
+	if not( fname or lname or email or info):
+		raise Exception("User Details not passed!!")
+		return render_template('form.html') ##throw some sort of error
 	if (db.santa.find( {"email": email} ).count() == 0):
 		db.santa.insert({ 
 			'fname':fname, 
